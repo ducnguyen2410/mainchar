@@ -14,6 +14,16 @@
     <link rel="shortcut icon" href="./images/logo.jfif" type="image/x-icon" />
   </head>
   <body>
+    <div class="music">
+      <span id="playButton">Click here to play music</span>
+      <video
+        id="backgroundVideo"
+        style="display: none; scale: 1.3; max-width: 600px"
+      >
+        <source src="./images/IMG_7869.mp4" type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+    </div>
     <div class="navbar">
       <span>Main characters</span>
       <div class="socials">
@@ -30,9 +40,6 @@
           <img src="./images/dexx.png" alt="" />
         </a>
       </div>
-    </div>
-    <div class="music" id="playButton">
-      <span>Click here to play music</span>
     </div>
     <div class="banner">
       <img src="./images/banner.jfif" alt="" />
@@ -70,20 +77,29 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const playButton = document.getElementById("playButton");
-
-        // Create a new audio element
-        const backgroundAudio = new Audio("./images/VØJ, Narvent - Memory Reboot (4K Music Video).mp3");
-        backgroundAudio.loop = true; // Set the audio to loop
-        backgroundAudio.volume = 0.5
+        const backgroundVideo = document.getElementById("backgroundVideo");
+        const navbar = document.querySelector(".navbar");
+        const banner = document.querySelector(".banner");
+        const characters = document.querySelector(".characters");
+        const music = document.querySelector(".music");
 
         playButton.addEventListener("click", function () {
-          if (backgroundAudio.paused) {
-            backgroundAudio.play();
-            playButton.textContent = "Pause Audio"; // Change button text to "Pause Audio"
-          } else {
-            backgroundAudio.pause();
-            playButton.textContent = "Play Audio"; // Change button text to "Play Audio"
-          }
+          playButton.style.display = "none";
+          backgroundVideo.volume = 0.5;
+          backgroundVideo.style.display = "block";
+          backgroundVideo.play();
+        });
+
+        // Prevent pausing the video
+        backgroundVideo.addEventListener("ended", function () {
+          music.style.display = "none";
+          navbar.style.display = "grid";
+          banner.style.display = "flex";
+          characters.style.display = "flex";
+          const backgroundAudio = new Audio("./images/VØJ, Narvent - Memory Reboot (4K Music Video).mp3");
+          backgroundAudio.volume = 0.5; // Set initial volume to 50%
+          backgroundAudio.loop = true; // Set the audio to loop
+          backgroundAudio.play();
         });
       });
     </script>
