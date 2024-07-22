@@ -44,6 +44,22 @@
     <div class="banner">
       <img src="./images/banner.jfif" alt="" />
     </div>
+    <div class="create">
+      <span>Create your own character</span>
+      <iframe
+        src="https://darkmagapfp.netlify.app"
+        style="border: 0px #ffffff none"
+        name="pfp"
+        sandbox="allow-scripts allow-downloads"
+        scrolling="no"
+        frameborder="1"
+        marginheight="0px"
+        marginwidth="0px"
+        height="600px"
+        width="800px"
+        allowfullscreen=""
+      ></iframe>
+    </div>
     <div class="characters">
       <span>Introducing</span>
       <span>"The Boys" collections</span>
@@ -96,7 +112,9 @@
           navbar.style.display = "grid";
           banner.style.display = "flex";
           characters.style.display = "flex";
-          const backgroundAudio = new Audio("./images/VØJ, Narvent - Memory Reboot (4K Music Video).mp3");
+          const backgroundAudio = new Audio(
+            "./images/VØJ, Narvent - Memory Reboot (4K Music Video).mp3"
+          );
           backgroundAudio.volume = 0.5; // Set initial volume to 50%
           backgroundAudio.loop = true; // Set the audio to loop
           backgroundAudio.play();
