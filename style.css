@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bona Nova SC", serif;
+}
+
+body {
+  background-image: url("./images/background.jpg");
+  background-size: 40%;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 30vw 50vw;
+  justify-content: center;
+  background-color: red;
+  padding: 20px;
+  border-bottom: 2px solid white;
+}
+
+.navbar > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  border-radius: 50%;
+  background: white;
+  width: 50px;
+}
+
+.banner {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.banner img {
+  box-shadow: 0 20px 50px red;
+  width: 90%;
+}
+
+.characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20vh;
+  margin-bottom: 100px;
+}
+
+.characters > span:nth-child(1) {
+  color: white;
+  font-size: 3em;
+  margin-bottom: 50px;
+}
+
+.characters > span:nth-child(2) {
+  color: white;
+  font-size: 4em;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.firstrow {
+  display: flex;
+}
+
+.firstrow div,
+.secondrow div,
+.thirdrow div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.secondrow {
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  gap: 30%;
+  justify-content: center;
+}
+
+.thirdrow {
+  display: flex;
+  flex-direction: row;
+  gap: 30%;
+  justify-content: center;
+}
+
+.ill {
+  width: 400px;
+  height: 350px;
+  transition: 0.3s;
+}
+
+.characters > div > div:hover .ill {
+    transform: translateX(-4px) translateY(-4px);
+}
+
+.characters > div > div:hover span {
+    color: #6874E8;
+}
+
+.characters span {
+    color: white;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+span {
+    transition: 0.3s;
+    text-align: center;
+}
+
+@media only screen and (max-device-width: 700px) {
+    div {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: row !important;
+    }
+
+    .navbar {
+        display: flex;
+        gap: 20px;
+        flex-direction: column !important;
+    }
+
+    .characters > span:nth-child(2) {
+        font-size: 2em;
+    }
+
+    .characters > span:nth-child(1) {
+        font-size: 1.5em;
+    }
+
+    .characters img {
+        width: 300px;
+        height: 250px;
+    }
+}
