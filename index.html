@@ -31,6 +31,9 @@
         </a>
       </div>
     </div>
+    <div class="music" id="playButton">
+      <span>Click here to play music</span>
+    </div>
     <div class="banner">
       <img src="./images/banner.jfif" alt="" />
     </div>
@@ -64,5 +67,25 @@
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const playButton = document.getElementById("playButton");
+
+        // Create a new audio element
+        const backgroundAudio = new Audio("./images/VØJ, Narvent - Memory Reboot (4K Music Video).mp3");
+        backgroundAudio.loop = true; // Set the audio to loop
+        backgroundAudio.volume = 0.5
+
+        playButton.addEventListener("click", function () {
+          if (backgroundAudio.paused) {
+            backgroundAudio.play();
+            playButton.textContent = "Pause Audio"; // Change button text to "Pause Audio"
+          } else {
+            backgroundAudio.pause();
+            playButton.textContent = "Play Audio"; // Change button text to "Play Audio"
+          }
+        });
+      });
+    </script>
   </body>
 </html>

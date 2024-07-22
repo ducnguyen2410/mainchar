@@ -19,6 +19,15 @@ body {
   border-bottom: 2px solid white;
 }
 
+.music {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+}
+
 .navbar > span {
   display: flex;
   justify-content: center;
